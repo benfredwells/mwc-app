@@ -1,6 +1,12 @@
-- create simple app that draws a colored shape with the drawing being a
-custom mwc component
+- change to 2 space indent
+- create simple app
+  - actually draw something
+  - don't draw twice at init
+  - move it all into an app component
+- source map for debugging
+- create dist folder for output
+- add development option
+- set up dev server?
 - use material styles to add primary colors etc.
 - use flex to position components
 - use typescript
-- setup proper build system

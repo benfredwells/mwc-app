@@ -1,0 +1,6 @@
+- create simple app that draws a colored shape with the drawing being a
+custom mwc component
+- use material styles to add primary colors etc.
+- use flex to position components
+- use typescript
+- setup proper build system

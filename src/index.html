@@ -1,8 +1,12 @@
 <!doctype html>
 <head>
-  <script type="module" src="./index.js"></script>
+  <script type="module" src="./bundle.js"></script>
 </head>
 <body>
   <label>Select</label>
-  <md-select>Hello</md-select>
+  <md-outlined-select name="foo">
+    <md-select-option value="" headline="--Please choose--" selected></md-select-option>
+    <md-select-option value="poop" headline="Poop"></md-select-option>
+    <md-select-option value="boop" headline="Boop"></md-select-option>
+  </md-outlined-select>
 </body>

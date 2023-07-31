@@ -1,5 +1,11 @@
 import { LitElement, html } from "lit";
 
+const canvasWidth = 100;
+const canvasHeight = 100;
+const margin = 10;
+const outlineColour = "black";
+const outlineWidth = 1;
+
 class MwcAppDrawing extends LitElement {
   static properties = {
     colour: {},
@@ -17,7 +23,7 @@ class MwcAppDrawing extends LitElement {
   }
 
   render() {
-    return html`<canvas id="canvas" width=100 height=100></canvas>`;
+    return html`<canvas id="canvas" width=${canvasWidth} height=${canvasHeight}></canvas>`;
   }
 
   firstUpdated() {
@@ -35,11 +41,39 @@ class MwcAppDrawing extends LitElement {
 
     var ctx = this._canvas.getContext("2d");
     ctx.save();
-    ctx.clearRect(0, 0, 100, 100);
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    ctx.strokeStyle = outlineColour;
+    ctx.lineWidth = outlineWidth;
+    ctx.strokeRect(0, 0, canvasWidth, canvasHeight);
 
     if (this.colour != "" && this.shape != "") {
       ctx.fillStyle = this.colour;
-      ctx.fillRect(0, 0, 100, 100);
+      var shapeWidth = canvasWidth - (2 * margin);
+      var shapeHeight = canvasHeight - (2 * margin);
+      switch (this.shape) {
+        case "square":
+          ctx.fillRect(margin, margin, shapeWidth, shapeHeight);
+          break;
+        case "circle":
+          ctx.beginPath();
+          var radius;
+          if (shapeHeight < shapeWidth) {
+            radius = shapeHeight / 2;
+          } else {
+            radius = shapeWidth / 2;
+          }
+          ctx.arc(canvasWidth / 2, canvasHeight / 2, radius, 0, Math.PI * 2, true);
+          ctx.fill();
+          break;
+        case "triangle":
+          ctx.beginPath();
+          ctx.moveTo(margin, canvasHeight - margin);
+          ctx.lineTo(canvasWidth / 2, margin);
+          ctx.lineTo(canvasWidth - margin, canvasHeight - margin);
+          ctx.closePath();
+          ctx.fill();
+          break;
+      }
     }
 
     ctx.restore();

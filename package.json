@@ -8,6 +8,7 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-typescript": "^11.1.2",
     "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.1",
     "rollup": "^3.27.0",
     "typescript": "^5.1.6"
   },

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "tsc-out",
+    "rootDir": "src",
+    "allowJs": true,
+    "target": "esnext",
+    "moduleResolution": "nodeNext",
+  }
+}

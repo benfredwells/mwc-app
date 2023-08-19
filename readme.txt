@@ -1,5 +1,6 @@
-to run build script:
+to run build / clean scripts:
 npm run build
+npm run clean
 
 the build script is defined in package.json
 

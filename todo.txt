@@ -2,8 +2,6 @@
   - move it all into an app component
 - build script
   - does rollup do typescript?
-  - do typescript bit
-  - do rollup bit
   - copy static files to dist
 - source map for debugging
 - add development option

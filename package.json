@@ -12,6 +12,6 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "build": "npx tsc && npx rollup -c --bundleConfigAsCjs"
+    "build": "npx tsc && npx rollup -c --bundleConfigAsCjs && npx copyfiles -u 1 src/**/* -e src/**/*.js -e src/**/*.ts dist"
   }
 }

@@ -7,5 +7,5 @@
     "allowJs": true,
     "target": "esnext",
     "moduleResolution": "nodeNext",
-  }
-}
+    "experimentalDecorators": true,
+  }}

@@ -82,3 +82,9 @@ export class MwcAppDrawing extends LitElement {
     ctx.restore();
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "mwc-app-drawing": MwcAppDrawing;
+  }
+}

@@ -15,6 +15,10 @@ export class MwcAppDrawing extends LitElement {
   @property()
   shape = "";
 
+  constructor() {
+    super();
+  }
+
   get _canvas() {
     return this.renderRoot?.querySelector('canvas') ?? null;
   }
@@ -37,6 +41,8 @@ export class MwcAppDrawing extends LitElement {
       return;
 
     var ctx = this._canvas.getContext("2d");
+    if (!ctx) return;
+
     ctx.save();
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     ctx.strokeStyle = outlineColour;

@@ -2,7 +2,7 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
-    "outDir": "tsc-out",
+    "outDir": "dist",
     "rootDir": "src",
     "allowJs": true,
     "target": "esnext",
@@ -11,5 +11,7 @@
     "importHelpers": true,
     "strict": true,
     "useDefineForClassFields": false,
+    "sourceMap": true,
+    "inlineSources": true
   }
 }

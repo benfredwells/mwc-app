@@ -1,9 +1,5 @@
 - create simple app
   - move it all into an app component
-- source map for debugging
-  - source map for typescript
-- build script
-  - does rollup do typescript?
 - add development option
 - set up dev server?
 - use material styles to add primary colors etc.

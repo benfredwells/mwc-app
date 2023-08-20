@@ -10,5 +10,6 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "strict": true,
+    "useDefineForClassFields": false,
   }
 }

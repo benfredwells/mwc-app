@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import {LitElement, html} from 'lit';
 
 const canvasWidth = 100;
 const canvasHeight = 100;

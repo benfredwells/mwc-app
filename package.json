@@ -12,6 +12,7 @@
     "rollup": "^3.27.0",
     "typescript": "^5.1.6"
   },
+  "type": "module",
   "scripts": {
     "build": "npx tsc && npx rollup -c --bundleConfigAsCjs && npx copyfiles -u 1 src/**/* -e src/**/*.js -e src/**/*.ts dist",
     "clean": "npx rimraf dist tsc-out"

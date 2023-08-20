@@ -8,4 +8,7 @@
     "target": "esnext",
     "moduleResolution": "nodeNext",
     "experimentalDecorators": true,
-  }}
+    "importHelpers": true,
+    "strict": true,
+  }
+}

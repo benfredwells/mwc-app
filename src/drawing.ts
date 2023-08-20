@@ -1,4 +1,5 @@
 import {LitElement, html} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 const canvasWidth = 100;
 const canvasHeight = 100;
@@ -6,17 +7,13 @@ const margin = 10;
 const outlineColour = "black";
 const outlineWidth = 1;
 
-class MwcAppDrawing extends LitElement {
-  static properties = {
-    colour: {},
-    shape: {},
-  };
+@customElement('mwc-app-drawing')
+export class MwcAppDrawing extends LitElement {
+  @property()
+  colour = "";
 
-  constructor() {
-    super();
-    this.colour = "";
-    this.shape = "";
-  }
+  @property()
+  shape = "";
 
   get _canvas() {
     return this.renderRoot?.querySelector('canvas') ?? null;
@@ -79,5 +76,3 @@ class MwcAppDrawing extends LitElement {
     ctx.restore();
   }
 }
-
-customElements.define("mwc-app-drawing", MwcAppDrawing);

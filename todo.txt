@@ -1,5 +1,4 @@
 - create simple app
-  - convert it to typescript
   - move it all into an app component
 - source map for debugging
   - source map for typescript

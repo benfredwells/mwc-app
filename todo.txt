@@ -1,6 +1,3 @@
-- move it all into an app component
-  - get first paint working
-  - styling
 - add development option
 - set up dev server?
 - use material styles to add primary colors etc.

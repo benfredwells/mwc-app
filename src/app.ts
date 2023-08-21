@@ -7,6 +7,27 @@ import { MdOutlinedSelect } from '@material/web/select/outlined-select.js';
 @customElement('mwc-app')
 export class MwcApp extends LitElement {
   static styles = css`
+    #content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #div-settings {
+      display: flex;
+      flex-direction: column;
+      padding-right: 10px;
+    }
+
+    .div-setting {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .div-setting label {
+      flex-grow: 1;
+      padding-right: 10px;
+    }
   `;
 
   render() {

@@ -27,7 +27,6 @@ export class MwcAppDrawing extends LitElement {
     return html`<canvas id="canvas" width=${canvasWidth} height=${canvasHeight}></canvas>`;
   }
 
-
   shouldUpdate() {
     this.paint();
     return (this._canvas == null);

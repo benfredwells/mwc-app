@@ -8,4 +8,6 @@ import { MwcApp } from './app.js';
 
 var app:MwcApp = <MwcApp>document.getElementById("app");
 
-window.onload = () => {app.updateDrawing(); app.paint()};
+window.onload = () => {
+  app.updateDrawing();
+};

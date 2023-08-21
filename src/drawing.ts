@@ -1,5 +1,5 @@
-import {LitElement, html} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import { LitElement, html } from 'lit';
+import { customElement, property, query } from 'lit/decorators.js';
 
 const canvasWidth = 100;
 const canvasHeight = 100;
@@ -15,13 +15,8 @@ export class MwcAppDrawing extends LitElement {
   @property()
   shape = "";
 
-  constructor() {
-    super();
-  }
-
-  get _canvas() {
-    return this.renderRoot?.querySelector('canvas') ?? null;
-  }
+  @query('canvas')
+  _canvas! : HTMLCanvasElement | null;
 
   render() {
     return html`<canvas id="canvas" width=${canvasWidth} height=${canvasHeight}></canvas>`;

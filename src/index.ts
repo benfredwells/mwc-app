@@ -6,7 +6,7 @@ import './app.js';
 
 import { MwcApp } from './app.js';
 
-var app:MwcApp = <MwcApp>document.getElementById("app");
+var app : MwcApp = <MwcApp> document.getElementById("app");
 
 window.onload = () => {
   app.updateDrawing();

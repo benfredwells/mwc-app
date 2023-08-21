@@ -10,6 +10,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "strict": true,
+    "noImplicitAny": true,
     "useDefineForClassFields": false,
     "sourceMap": true,
     "inlineSources": true

@@ -1,11 +1,20 @@
-import {LitElement, css, html} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import { LitElement, css, html } from 'lit';
+import { customElement, query } from 'lit/decorators.js';
 
 import { MwcAppDrawing } from './drawing.js';
 import { MdOutlinedSelect } from '@material/web/select/outlined-select.js';
 
 @customElement('mwc-app')
 export class MwcApp extends LitElement {
+  @query('#drawing')
+  drawing! : MwcAppDrawing | null;
+
+  @query('#select-colour')
+  colourSelect! : MdOutlinedSelect | null;
+
+  @query('#select-shape')
+  shapeSelect! : MdOutlinedSelect | null;
+
   static styles = css`
     #content {
       display: flex;
@@ -58,21 +67,17 @@ export class MwcApp extends LitElement {
   }
 
   updateDrawing() {
-    var drawing: MwcAppDrawing = <MwcAppDrawing>this.renderRoot?.querySelector('#drawing') ?? null;
-    var colourSelect: MdOutlinedSelect = <MdOutlinedSelect>this.renderRoot?.querySelector('#select-colour') ?? null;
-    var shapeSelect: MdOutlinedSelect = <MdOutlinedSelect>this.renderRoot?.querySelector('#select-shape') ?? null;
-    if (!drawing || !colourSelect || !shapeSelect)
+    if (!this.drawing || !this.colourSelect || !this.shapeSelect)
       return;
 
-    drawing.colour = colourSelect.value;
-    drawing.shape = shapeSelect.value;
+    this.drawing.colour = this.colourSelect.value;
+    this.drawing.shape = this.shapeSelect.value;
   }
 
   paint() {
-    var drawing: MwcAppDrawing = <MwcAppDrawing>this.renderRoot?.querySelector('#drawing') ?? null;
-    if (!drawing)
+    if (!this.drawing)
       return;
 
-    drawing.paint();
+    this.drawing.paint();
   }
 }

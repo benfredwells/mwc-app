@@ -43,7 +43,23 @@ export class MwcApp extends LitElement {
     if (!drawing || !colourSelect || !shapeSelect)
       return;
 
+    var colour: string = colourSelect.value;
+    var shape: string = shapeSelect.value;
+
     drawing.colour = colourSelect.value;
     drawing.shape = shapeSelect.value;
-  }  
+  }
+
+  firstUpdated() {
+    this.updateDrawing();
+    this.paint();
+  }
+
+  paint() {
+    var drawing: MwcAppDrawing = <MwcAppDrawing>this.renderRoot?.querySelector('#drawing') ?? null;
+    if (!drawing)
+      return;
+
+    drawing.paint();
+  }
 }
